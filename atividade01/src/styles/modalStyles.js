@@ -1,0 +1,95 @@
+import { StyleSheet } from "react-native";
+import { theme } from "./theme";
+
+export const modalStyles = StyleSheet.create({
+  screenContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: theme.spacing.lg,
+  },
+  headerRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: theme.spacing.lg,
+    gap: theme.spacing.sm,
+  },
+  headerText: {
+    fontSize: theme.fontSize.hero,
+    fontWeight: "900",
+  },
+  mainButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    paddingVertical: theme.spacing.md,
+    paddingHorizontal: 28,
+    borderRadius: theme.radius.md,
+    ...theme.shadow.button,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: theme.fontSize.body,
+    fontWeight: "bold",
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: theme.colors.overlay,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalCard: {
+    width: "80%",
+    backgroundColor: theme.colors.surface,
+    borderRadius: theme.radius.lg,
+    padding: theme.spacing.lg + 4,
+    alignItems: "center",
+    overflow: "hidden",
+    ...theme.shadow.card,
+  },
+  colorIndicator: {
+    width: "120%",
+    height: 10,
+    position: "absolute",
+    top: 0,
+  },
+  modalIconCircle: {
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: theme.spacing.md,
+  },
+  modalTitle: {
+    fontSize: theme.fontSize.subtitle + 1,
+    fontWeight: "bold",
+    marginTop: theme.spacing.sm,
+    marginBottom: theme.spacing.sm,
+    color: theme.colors.text,
+  },
+  modalBody: {
+    fontSize: theme.fontSize.body,
+    textAlign: "center",
+    color: theme.colors.textSecondary,
+    marginBottom: theme.spacing.md,
+    lineHeight: 22,
+  },
+  closeButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+    paddingVertical: theme.spacing.sm,
+    paddingHorizontal: theme.spacing.md,
+    borderRadius: theme.radius.sm,
+    backgroundColor: theme.colors.background,
+  },
+  closeButtonText: {
+    color: theme.colors.textSecondary,
+    fontWeight: "bold",
+  },
+});

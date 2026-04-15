@@ -1,3 +1,6 @@
+/**
+ * Cores, espaçamentos e tipografia (identidade visual do app).
+ */
 export const theme = {
   colors: {
     primary: "#1565C0",
@@ -36,5 +39,22 @@ export const theme = {
     md: 12,
     lg: 18,
     full: 999,
+  },
+  /** Sombras reutilizáveis (iOS: shadow*; Android: elevation). */
+  shadow: {
+    card: {
+      elevation: 6,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 3 },
+      shadowOpacity: 0.12,
+      shadowRadius: 10,
+    },
+    button: {
+      elevation: 3,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.14,
+      shadowRadius: 4,
+    },
   },
 };

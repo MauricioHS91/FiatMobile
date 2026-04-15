@@ -1,17 +1,27 @@
+import { Ionicons } from "@expo/vector-icons";
 import { ScrollView, Text, View } from "react-native";
-import { ScreenContainer } from "./components";
-import { globalStyles } from "./styles/globalStyles";
-import { theme } from "./styles/theme";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { globalStyles } from "../styles/globalStyles";
+import { scrollViewStyles } from "../styles/scrollStyles";
+import { theme } from "../styles/theme";
+import { scrollViewBlocks } from "../utils/data";
+
+const sv = scrollViewStyles;
+
+function scrollBlockIcon(id) {
+  if (id === "b1") return "document-text-outline";
+  if (id === "b2") return "cube-outline";
+  return "bookmark-outline";
+}
 
 export default function ScrollViewScreen() {
   return (
-    <ScreenContainer>
+    <SafeAreaView
+      style={[globalStyles.flex1, { backgroundColor: theme.colors.background }]}
+    >
       <ScrollView
         style={sv.scroll}
-        contentContainerStyle={[
-          globalStyles.screenContainer,
-          sv.scrollContent,
-        ]}
+        contentContainerStyle={[globalStyles.screenContainer, sv.scrollContent]}
         showsVerticalScrollIndicator
       >
         <Text style={[globalStyles.subtitle, sv.intro]}>ScrollView</Text>
@@ -25,11 +35,20 @@ export default function ScrollViewScreen() {
         </Text>
         {scrollViewBlocks.map((p) => (
           <View key={p.id} style={sv.block}>
-            <Text style={sv.blockTitle}>{p.title}</Text>
+            <View style={sv.blockHeader}>
+              <View style={sv.blockIconBox}>
+                <Ionicons
+                  name={scrollBlockIcon(p.id)}
+                  size={20}
+                  color={theme.colors.primary}
+                />
+              </View>
+              <Text style={sv.blockTitle}>{p.title}</Text>
+            </View>
             <Text style={sv.blockText}>{p.text}</Text>
           </View>
         ))}
       </ScrollView>
-    </ScreenContainer>
+    </SafeAreaView>
   );
 }

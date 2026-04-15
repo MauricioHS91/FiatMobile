@@ -27,6 +27,7 @@ export const globalStyles = StyleSheet.create({
     width: "100%",
     maxWidth: 420,
     alignSelf: "center",
+    ...theme.shadow.card,
   },
   title: {
     fontSize: theme.fontSize.hero,
@@ -62,6 +63,7 @@ export const globalStyles = StyleSheet.create({
     borderRadius: theme.radius.md,
     alignItems: "center",
     marginTop: theme.spacing.md,
+    ...theme.shadow.button,
   },
   primaryButtonText: {
     color: "#fff",
